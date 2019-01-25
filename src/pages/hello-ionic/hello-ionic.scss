@@ -1,3 +1,14 @@
 page-hello-ionic {
-
+    /*#coverImg {
+        height: 50vh;
+        width: 25vw;
+        margin: 0 auto; 
+        border: solid red;
+    }*/
+    #coverImg img {
+        display: block;
+        margin: auto;
+        max-width: 60%;
+        height: auto;
+    }
 }

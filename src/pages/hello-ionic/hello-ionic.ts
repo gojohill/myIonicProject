@@ -2,6 +2,9 @@ import { Component} from '@angular/core';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import {Nav,NavController} from 'ionic-angular';
+import { getComponentViewDefinitionFactory } from '@angular/core/src/view';
+import { navGroupStringtoObjects } from 'ionic-angular/umd/navigation/url-serializer';
+import { ListPage } from '../list/list'
 
 @Component({
   selector: 'page-hello-ionic',
@@ -36,12 +39,12 @@ export class HelloIonicPage {
       });
     }
 
-
-    
-
+  
   }
 
-
+gotoTOC() {
+  this.navCtrl.push(ListPage, { item: this.items })
+}
   
 
 }

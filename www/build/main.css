@@ -25673,3 +25673,31 @@ ion-navbar.toolbar {
   min-height: calc(46px + constant(safe-area-inset-bottom));
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
+
+page-hello-ionic {
+  /*#coverImg {
+        height: 50vh;
+        width: 25vw;
+        margin: 0 auto; 
+        border: solid red;
+    }*/
+}
+
+page-hello-ionic #coverImg img {
+  display: block;
+  margin: auto;
+  max-width: 60%;
+  height: auto;
+}
+
+page-item-details #pageTxt {
+  white-space: pre-wrap;
+}
+
+page-item-details #pgNbr {
+  text-align: center;
+}
+
+page-item-details #titleDiv {
+  float: right;
+}

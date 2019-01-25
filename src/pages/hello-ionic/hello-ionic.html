@@ -13,11 +13,13 @@
 
   <h1>My Iconic Book - The Whole Story</h1>
   <h3>Cover Page</h3>
-  <br>  
-  <ion-img width="25%" height="50%" src="../../assets/imgs/coverpg.png" ng-click="nextpage();"></ion-img>
+  <br>
+  <div id="coverImg">
+    <img src="../../assets/imgs/coverpg.png" (click)="gotoTOC()">
+  </div>
   <br>
   <h4>by Some Author</h4>
 
 
-  
+
 </ion-content>
