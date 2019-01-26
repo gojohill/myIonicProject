@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
-
 import { NavController, NavParams } from 'ionic-angular';
 // ionic service to access the book
 import { BookserviceProvider } from '../../providers/bookservice/bookservice';
 
+/**
+ * This displays the pages with a previous and next page button
+ */
 
 @Component({
   selector: 'page-item-details',
@@ -16,16 +18,22 @@ export class ItemDetailsPage {
   selectedChapter: any;
   selectedPage: any;
   pgNbr = 0;
+  pageOf = 0;
+  
 
   constructor(public bookService: BookserviceProvider, public navCtrl: NavController,
     public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
+    // Get the chapter that was selected from the Table of Contents
     this.selectedChapter = bookService.getChapter(this.selectedItem.chapter);
-    console.log(this.selectedChapter.title)
+    // Get the first page of the chapter that was selected from the Table of Contents
     this.selectedPage = bookService.getPage(this.selectedItem.chapter, this.pgNbr);
+
+    this.pageOf=this.calcPgNbr(this.selectedChapter.nbr,this.selectedPage.pgNbr);
   }
 
+  // goes to the next page in the current Chapter or the next Chapter
   nextPg() {
 
     if (this.pgNbr < (this.selectedChapter.pages.length - 1)) {
@@ -39,8 +47,12 @@ export class ItemDetailsPage {
         this.selectedPage = this.bookService.getPage(this.selectedItem.chapter, this.pgNbr);
       }
     }
+   
+    this.pageOf=this.calcPgNbr(this.selectedChapter.nbr,this.selectedPage.pgNbr);
+    
   }
 
+  // goes to the previous page of the current Chapter or the previous Chapter
   prevPg() {
     if (this.pgNbr > 0) {
       this.pgNbr--;
@@ -54,5 +66,10 @@ export class ItemDetailsPage {
 
       }
     }
+    this.pageOf=this.calcPgNbr(this.selectedChapter.nbr,this.selectedPage.pgNbr);
+  }
+
+  calcPgNbr(chapterNbr: number, currentPgNbr: number) {
+    return (10*(chapterNbr-1))+currentPgNbr;
   }
 }

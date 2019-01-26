@@ -1,50 +1,30 @@
-import { Component} from '@angular/core';
-import { NgModule, ErrorHandler } from '@angular/core';
-import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
-import {Nav,NavController} from 'ionic-angular';
-import { getComponentViewDefinitionFactory } from '@angular/core/src/view';
-import { navGroupStringtoObjects } from 'ionic-angular/umd/navigation/url-serializer';
+import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
 import { ListPage } from '../list/list'
+import { BookserviceProvider } from '../../providers/bookservice/bookservice';
+import { book } from '../../providers/bookservice/book';
+
+// This page will display the Cover Page with a menu.  If the cover picture is clicked on it
+// go to the table of contents page.
 
 @Component({
   selector: 'page-hello-ionic',
   templateUrl: 'hello-ionic.html'
 })
 export class HelloIonicPage {
-  icons: string[];
-  items: Array<{title: string, note: string, icon: string}>;
+  // myBook has the data for the book
+  myBook: book;
 
-  constructor(public navCtrl: NavController) {
-    this.icons = ['book'];
-    
-    this.items = [];
-    
-    this.items.push({
-      title: 'Cover Page',
-        note: 'Cover Page My Ionic Book',
-        icon: this.icons[0]
-    })
+  constructor(public bookService: BookserviceProvider, public navCtrl: NavController) {
+    // Get the Book from the Provider
+    this.myBook = this.bookService.getBook();
 
-    this.items.push({
-      title: 'Table of Contents',
-        note: 'Table of Contents',
-        icon: this.icons[0]
-    })
 
-    for(let i = 1; i < 11; i++) {
-      this.items.push({
-        title: 'Chapter ' + i,
-        note: 'This is Chapter #' + i,
-        icon: this.icons[0]
-      });
-    }
-
-  
+  }
+  // clicking on the cover picture will take you to the Table of Contents Page
+  gotoTOC() {
+    this.navCtrl.push(ListPage)
   }
 
-gotoTOC() {
-  this.navCtrl.push(ListPage, { item: this.items })
-}
-  
 
 }

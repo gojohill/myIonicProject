@@ -1,20 +1,50 @@
 <ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Table of Contents</ion-title>
-  </ion-navbar>
+  <div id="grid1">
+    <ion-grid>
+      <ion-row>
+        <div id="div1">
+          <ion-col col-1>
+            <ion-navbar id="navBar">
+              <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+              </button>
+            </ion-navbar>
+          </ion-col>
+        </div>
+        <div id="div2">
+          <ion-col col-10>
+            <ion-title>Table of Content</ion-title>
+          </ion-col>
+        </div>
+        <div id="div3">
+          <ion-col col-2>
+            <button >
+              <ion-icon id="#titleforward" name="arrow-forward" (click)="gotoPg1()"></ion-icon>
+            </button>
+          </ion-col>
+        </div>
+      </ion-row>
+    </ion-grid>
+
+
+  </div>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon name="{{item.icon}}" item-left></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-right>
-        {{item.note}}
-      </div>
-    </button>
-  </ion-list>
+  <div>
+
+
+
+    <ion-list>
+      <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+        <ion-icon name="{{item.icon}}" item-left></ion-icon>
+        {{item.title}}
+        <div class="item-note" item-right>
+          {{item.note}}
+        </div>
+      </button>
+    </ion-list>
+
+
+  </div>
 </ion-content>

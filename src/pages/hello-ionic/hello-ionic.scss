@@ -1,14 +1,34 @@
 page-hello-ionic {
-    /*#coverImg {
-        height: 50vh;
-        width: 25vw;
-        margin: 0 auto; 
+    #coverImg {
         border: solid red;
-    }*/
-    #coverImg img {
+    }
+    img {
         display: block;
         margin: auto;
-        max-width: 60%;
+        max-width: 25%;
         height: auto;
+    }
+    /* 
+    change the max-width of the image based on the size of the screen.
+    */
+    @media (max-width: 9000px) {
+        img {
+            max-width: 25%
+        }
+    }
+    @media (max-width: 1024px) {
+        img {
+            max-width: 55%
+        }
+    }
+    @media (max-width: 700px) {
+        img {
+            max-width: 75%
+        }
+    }
+    @media (max-width: 550px) {
+        img {
+            max-width: 80%
+        }
     }
 }

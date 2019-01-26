@@ -34,7 +34,7 @@ export class BookserviceProvider {
     this.myBook.loadPages(this.myBook.chapters,6,PGTEXT, PGTEXTODD);
     this.myBook.loadPages(this.myBook.chapters,7,PGTEXT, PGTEXTODD);
     this.myBook.loadPages(this.myBook.chapters,8,PGTEXT, PGTEXTODD);
-    this.myBook.loadPages(this.myBook.chapters,9,PGTEXT, PGTEXTODD);
+    //this.myBook.loadPages(this.myBook.chapters,9,PGTEXT, PGTEXTODD);
 
 
     console.log("length of chapters")

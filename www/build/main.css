@@ -25675,19 +25675,44 @@ ion-navbar.toolbar {
 }
 
 page-hello-ionic {
-  /*#coverImg {
-        height: 50vh;
-        width: 25vw;
-        margin: 0 auto; 
-        border: solid red;
-    }*/
+  /* 
+    change the max-width of the image based on the size of the screen.
+    */
 }
 
-page-hello-ionic #coverImg img {
+page-hello-ionic #coverImg {
+  border: solid red;
+}
+
+page-hello-ionic img {
   display: block;
   margin: auto;
-  max-width: 60%;
+  max-width: 25%;
   height: auto;
+}
+
+@media (max-width: 9000px) {
+  page-hello-ionic img {
+    max-width: 25%;
+  }
+}
+
+@media (max-width: 1024px) {
+  page-hello-ionic img {
+    max-width: 55%;
+  }
+}
+
+@media (max-width: 700px) {
+  page-hello-ionic img {
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 550px) {
+  page-hello-ionic img {
+    max-width: 80%;
+  }
 }
 
 page-item-details #pageTxt {
@@ -25700,4 +25725,61 @@ page-item-details #pgNbr {
 
 page-item-details #titleDiv {
   float: right;
+}
+
+page-list #div1, page-list #div2, page-list #div3 {
+  position: relative;
+  height: 5em;
+}
+
+page-list #div3 {
+  float: right;
+  width: 105em;
+}
+
+page-list #grid1 {
+  background-color: #f8f8f8;
+  height: 5em;
+}
+
+page-list .titleforwardcnt {
+  float: right;
+  border: solid none;
+}
+
+page-list #div3 button {
+  font-size: 1.45em;
+  background-color: #f8f8f8;
+  position: relative;
+  text-align: center;
+  top: 50%;
+  left: 95%;
+}
+
+@media (max-width: 9000px) {
+  page-list #div3 {
+    float: right;
+    width: 105em;
+  }
+}
+
+@media (max-width: 1024px) {
+  page-list #div3 {
+    float: right;
+    width: 75em;
+  }
+}
+
+@media (max-width: 700px) {
+  page-list #div3 {
+    float: right;
+    width: 50em;
+  }
+}
+
+@media (max-width: 550px) {
+  page-list #div3 {
+    float: right;
+    width: 8em;
+  }
 }

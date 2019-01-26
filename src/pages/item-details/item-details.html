@@ -3,7 +3,7 @@
     <button menuToggle *ngIf="!selectedItem">
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Chapter {{selectedItem.chapter}} <div id="titleDiv">Page {{selectedPage.pgNbr}}</div></ion-title>
+    <ion-title>Chapter {{selectedItem.chapter}} <div id="titleDiv">Page {{pageOf}}</div></ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -25,7 +25,7 @@
     </div>
 
     <div id="pgNbr">
-      - {{selectedPage.pgNbr}} -
+      - {{pageOf}} -
     </div>
     <br>
     <button ion-button block (click)="nextPg()">

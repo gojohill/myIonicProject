@@ -1,3 +1,57 @@
 page-list {
-
+    #div1, #div2, #div3 {
+        //border: solid red;
+        position: relative;
+        height: 5em;
+    }
+    #div3 {
+        float:right;
+        width: 105em;
+    }
+    #grid1 {
+        //border: solid blue;
+        background-color: #f8f8f8;
+        height: 5em;
+    }
+    .titleforwardcnt {
+        float: right;
+        border: solid none;
+    }
+    #div3 button {
+        //padding: .2em;
+        font-size: 1.45em; //Preferred size here
+        background-color: #f8f8f8;
+        //margin: 0;
+        position: relative;
+        text-align: center;
+        top: 50%;
+        left: 95%;
+        //left: 50%;
+        //transform: translate(-50%, -50%);
+    }
+    @media (max-width: 9000px) {
+        #div3 {
+            float:right;
+            width: 105em;
+        }
+    }
+    @media (max-width: 1024px) {
+        #div3 {
+            float:right;
+            width: 75em;
+        }
+    }
+    @media (max-width: 700px) {
+        #div3 {
+            float:right;
+            width: 50em;
+        }
+    }
+    @media (max-width: 550px) {
+        #div3 {
+            float:right;
+            width: 8em;
+        }
+    }
+    
 }
