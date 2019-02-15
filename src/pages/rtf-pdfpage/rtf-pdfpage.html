@@ -1,0 +1,31 @@
+<!--
+  Generated template for the RtfPdfpagePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Center City - RTF PDF Form </ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+
+
+<ion-content padding>
+
+    <button ion-button full (click)="goGetPDF()">Get PDF</button>
+
+  <!-- show if the fileUrl is not null -->
+  <ion-item *ngIf="fileUrl">
+    <div>
+      <object [data]="fileUrl" type="application/pdf">
+      </object>
+    </div>
+  </ion-item>
+
+</ion-content>
